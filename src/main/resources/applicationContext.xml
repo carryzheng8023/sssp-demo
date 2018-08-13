@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <import resource="applicationContext-service.xml"/>
+    <import resource="applicationContext-dao.xml"/>
+
+    <!--&lt;!&ndash; 配置自动扫描的包 &ndash;&gt;-->
+    <!--<context:component-scan base-package="xin.carryzheng.sssp"/>-->
+
+    <!--&lt;!&ndash; 配置数据源 &ndash;&gt;-->
+    <!--<context:property-placeholder location="classpath:db.properties"/>-->
+
+    <!--<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+        <!--<property name="user" value="${jdbc.user}" />-->
+        <!--<property name="password" value="${jdbc.password}" />-->
+        <!--<property name="driverClass" value="${jdbc.driverClass}" />-->
+        <!--<property name="jdbcUrl" value="${jdbc.jdbcUrl}" />-->
+
+        <!--&lt;!&ndash; 配置其他属性 &ndash;&gt;-->
+        <!--<property name="initialPoolSize" value="${jdbc.initPoolSize}"/>-->
+        <!--<property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 配置 JPA 的 EntityManagerFactory &ndash;&gt;-->
+    <!--<bean id="entityManagerFactory"-->
+          <!--class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+        <!--<property name="dataSource" ref="dataSource" />-->
+        <!--<property name="jpaVendorAdapter">-->
+            <!--<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />-->
+        <!--</property>-->
+        <!--<property name="packagesToScan" value="xin.carryzheng.sssp.entity" />-->
+        <!--<property name="jpaProperties">-->
+            <!--<props>-->
+                <!--<prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>-->
+                <!--<prop key="hibernate.hbm2ddl.auto">update</prop>-->
+                <!--<prop key="hibernate.show_sql">true</prop>-->
+                <!--<prop key="hibernate.format_sql">true</prop>-->
+                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQL57InnoDBDialect</prop>-->
+
+                <!--<prop key="hibernate.cache.use_second_level_cache">true</prop>-->
+                <!--<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>-->
+                <!--<prop key="hibernate.cache.use_query_cache">true</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+        <!--<property name="sharedCacheMode" value="ENABLE_SELECTIVE" />-->
+
+    <!--</bean>-->
+
+
+
+    <!--&lt;!&ndash; 配置事务 &ndash;&gt;-->
+    <!--<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">-->
+        <!--<property name="entityManagerFactory" ref="entityManagerFactory"/>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash; 配置支持基于注解的事务 &ndash;&gt;-->
+    <!--<tx:annotation-driven/>-->
+
+    <!--&lt;!&ndash; 配置 SpringData &ndash;&gt;-->
+    <!--<jpa:repositories base-package="xin.carryzheng.sssp.dao" entity-manager-factory-ref="entityManagerFactory"/>-->
+
+</beans>
